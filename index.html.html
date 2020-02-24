@@ -1,0 +1,209 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>ncovdataprocessing_webupdate_2</title><meta name="generator" content="MATLAB 9.7"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-02-24"><meta name="DC.source" content="ncovdataprocessing_webupdate_2.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">Trending Confirmed Cases of Covid-19. Based on Data Repository by Johns Hopkins CSSE. Updated 2.24.20.</a></li><li><a href="#2">Generate Fits</a></li></ul></div><h2 id="1">Trending Confirmed Cases of Covid-19. Based on Data Repository by Johns Hopkins CSSE. Updated 2.24.20.</h2><h2 id="2">Generate Fits</h2><img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_01.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_02.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_03.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_04.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_05.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_06.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_07.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_08.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_09.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_10.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_11.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_12.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_13.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_14.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_15.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_16.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_17.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_18.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_19.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_20.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_21.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_22.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_23.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_24.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_25.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_26.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_27.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_28.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_29.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_30.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_31.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_32.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_33.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_34.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_35.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_36.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_37.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_38.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_39.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_40.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_41.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_42.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_43.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_44.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_45.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_46.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_47.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_48.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_49.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_50.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_51.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_52.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_53.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_54.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_55.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_56.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_57.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_58.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_59.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_60.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_61.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_62.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_63.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_64.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_65.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_66.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_67.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_68.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_69.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_70.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_71.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_72.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_73.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_74.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_75.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_76.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_77.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_78.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_79.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_80.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_81.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_82.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_83.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_84.bmp" alt=""> <img vspace="5" hspace="5" src="ncovdataprocessing_webupdate_2_85.bmp" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Trending Confirmed Cases of Covid-19. Based on Data Repository by Johns Hopkins CSSE. Updated 2.24.20. 
+clc;clear;close all
+% Future Changes
+  % Set limits for graphs with confirmed cases < 2 
+  % Automate pulling and pushing data to github and web page
+    % Add Legend t
+   % ^ involves writing directly into html file. 
+   % Additional data like death rates etc
+   % Case growth forecast
+% Import Data from Excel as Table
+    % When Updating extend rows as needed. 
+
+% ncovdat = imptablefn("C:\Users\Danial Soorty\OneDrive - ChemStaff\matlab\2019CoN\time_series_2019-ncov-Confirmed_Automatot.xlsx", "time_series_2019-ncov-Confirmed", [1, 73]);
+rws=86;
+sz=rws-1; % To variabilize table size and pre-allocation variables
+Tsz=36;   % Table size (currently 36>number of reports)
+ncovdat = imptablefn("time_series_2019-ncov-Confirmed_Automatot.xlsx", "time_series_2019-ncov-Confirmed", [1, rws]);
+
+% Extract Data
+Times=fillmissing(datetime(ncovdat(1,5:end)),'linear');
+varnames=struct('Province_State',ncovdat(2:end,1),'Country_Region',ncovdat(2:end,2),'Lat',ncovdat(2:end,3),'Long',ncovdat(2:end,4));
+
+  % Time vector
+    Timevec=cumsum([0,(hours(diff(Times)))])';
+% Replace blanks with NaNs
+Data=ncovdat(2:end,5:end);
+empty=cellfun('isempty',Data); 
+Data(empty)={NaN};
+Datanum=cell2mat(Data); % Convert to numeric/mat
+Datanumt=Datanum';
+
+Varnamestable=struct2table(varnames); % 
+Province_State=cellstr(Varnamestable.Province_State);
+Country_Region=cellstr(Varnamestable.Country_Region);
+
+blanks=cellfun(@isempty,Province_State);
+blanksin=find(blanks);
+
+Province_State(blanks)=Country_Region(blanksin);
+
+
+% Construct Table
+datatype=repmat("double",sz,1);
+
+% Table=table(Data,'VariableNames',Province_State);\
+Table=table('Size',[Tsz,sz],'VariableTypes', datatype);
+Table.Properties.VariableNames=Province_State;
+Table(:,:)=Data';
+
+% Add Time to rows; 
+
+T2=addvars(Table,Times','Before','Anhui','NewVariableName','DateTime');
+T2=addvars(T2,Timevec,'Before','Anhui','NewVariableName','Time Elapsed');
+
+
+
+%% Generate Fits
+
+% Preallocate
+as=zeros(size(Datanumt,2),1);
+bs=zeros(size(Datanumt,2),1);
+fitteddat=zeros(size(T2));
+notdet=cell(size(T2,2),1);
+undat=ones(Tsz,sz);
+
+for i=1:size(Datanumt,2)
+unpos=[Datanumt(1,i);diff(Datanumt(:,i))];
+unposind=find(unpos==0);
+undat(:,i)=Datanumt(:,i);
+if numel(unposind)>0
+    undatwrk=undat(:,i);
+    undatwrk(unposind)=NaN;
+    undat(:,i)=undatwrk;
+else
+end 
+end 
+
+for i=1:size(undat,2)
+%     dat=table2array(T2(:,i));         % Extract data
+    dat=undat(:,i);
+    [datcln,I]=rmmissing(dat);         % Remove NaN
+    ttimevec=Timevec(~I);
+    datcln=[ttimevec datcln];
+   [dat,ia] =unique(datcln(:,2));    % Remove repeatd entries to for data fitting
+    ttimevec=datcln(ia,1);
+    datcln=[ttimevec dat];
+
+    if size(datcln,1)<2
+         Country=T2.Properties.VariableNames(i+2);
+         notdet(i+2)=Country;
+         
+    else
+    fitdat=fit(datcln(:,1),datcln(:,2),'exp1');
+    as(i)=fitdat.a;
+    bs(i)=fitdat.b;
+    end
+end 
+% Post Processing
+notdetindex=cellfun(@isempty,notdet);
+notdet=notdet(~notdetindex);
+
+% General Exponential Model
+expfn= @(a,b,x) a.*exp(b.*x);
+
+for i=3:size(T2,2)
+%     if max(unique(table2array(T2(:,i))))<10
+%         fitteddat(:,i-2)=(NaN);
+%     else 
+fitteddat(:,i-2)=expfn(as(i-2),bs(i-2),Timevec);
+%     end 
+end 
+
+
+% Plots
+for i=3:size(T2,2)
+    figure; 
+    hold on; 
+    p1=plot(Times,fitteddat(:,i-2));
+    plot(Times,table2array(T2(:,i)),'x');
+    ylabel('No. of Cases')
+    name=T2.Properties.VariableNames(i);
+    legend(name)
+    
+    % Generate Equation Name
+    astr=string(as(i-2));
+    bstr=string(bs(i-2));
+    streq='exp';
+    x2axesscript  % Add Secondary Axis
+    if as(i-2)==0
+        annotation('textbox',[0.142857142857143 0.814285714285716 0.332142857142857 0.0833333333333355],'String','Single number reported');
+    else
+    equation=sprintf('%.5fexp.^{%.5fx}',as(i-2),bs(i-2));
+    annotation('textbox',[0.142857142857143 0.814285714285716 0.332142857142857 0.0833333333333355],'String',equation,'FitBoxToText','on')
+    end
+    
+end
+
+##### SOURCE END #####
+--></body></html>
